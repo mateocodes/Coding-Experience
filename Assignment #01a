@@ -1,0 +1,49 @@
+/* 
+   Matthew Perez (Electrical Engineering)
+   Professor Miles
+   COMP B12
+   September 9th, 2022
+   
+   Program Intent: User inputs 4 positive integers, then program prints out how many of the integers were odd.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    int odd = 0;
+    int array[4];
+    //Initializes a variable named odd to hold the amount of odd positive integers and the array to hold 4 integers
+    
+    for (int i = 0; i < 4; i++)
+    {
+          cin >> array[i];
+          //User inputs an integer
+          
+          if (array[i] < 0)
+          { 
+            cout << "\nPlease input only positive integers\n";
+            i--;
+          }
+          //If statement checks that user inputted a positive integer  
+    }
+    
+    cout << "The positive integers you chose were: ";
+    for (int i = 0; i < 4; i++)
+        cout << array [i] << " ";
+    //Prints out positive integers that user inputted 
+    
+    for (int i = 0; i < 4; i++)
+    {
+        int math = array [i] % 2;
+        if (math > 0) 
+            odd++;
+    }
+    //Loop function determines which integers are odd and adds them to the odd variable
+    
+    cout << "\n\nThere are " << odd << " odd positive integers.\n";
+    //Prints out how many 
+    
+    return 0;
+}
