@@ -1,0 +1,47 @@
+/* 
+   Matthew Perez (Electrical Engineering)
+   Professor Miles
+   COMP B12
+   September 9th, 2022
+
+   Program Intent: User inputs two strings, then user determines if one of the strings is found in the other, if both of they match, or if none of them match. 
+
+*/
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+   string phrase1;
+   string phrase2;
+   getline (cin, phrase1);
+   getline (cin, phrase2);
+   
+   size_t firstsmall = phrase2.find(phrase1);
+   size_t firstbig = phrase1.find(phrase2);
+   
+   if (phrase1 == phrase2)
+   {
+      cout << "Both phrases match" << endl;;
+      return 1;
+   }
+   if (firstbig == string::npos && firstsmall == string::npos)
+   {
+      cout << "No matches" << endl;
+      return 1;
+   }
+   if (firstsmall != string::npos)
+      cout << phrase1 << " is found within "<< phrase2 << endl;
+   if (firstbig != string::npos)
+      cout << phrase2 << " is found within "<< phrase1 << endl; 
+
+   
+   
+      
+   
+   
+
+   return 0;
+}
