@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+
+   string input;
+   string palindrome;
+   string compare;
+    
+   
+   
+   getline(cin, input);
+   int size = input.length();
+   int index = size - 1;
+   palindrome = input;
+   for (int j = 0; j < index; ++j)
+      {
+         char holder1;
+         
+         if (palindrome[j] == ' ')
+         {
+            holder1 = palindrome[j];
+            palindrome[j] = palindrome[j+1];
+            palindrome[j+1] = holder1; 
+         }  
+         if (palindrome [j] == palindrome [j+1])
+            j = j + 2;
+      }
+      compare = palindrome; 
+   for (int i = 0; i < size/2; ++i)
+   {
+      if (palindrome[index - i] == ' ')
+         index--;
+      char holder2;
+      holder2 = palindrome[i];
+      palindrome[i] = palindrome[index - i];
+      palindrome[index - i] = holder2;
+      
+   }
+   if (palindrome == compare)
+      cout << "palindrome: " << input << endl;
+   else 
+      cout << "not a palindrome: " << input << endl;
+  
+  
+}
